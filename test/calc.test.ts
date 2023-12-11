@@ -1,6 +1,20 @@
 import { add, mul } from "../src/calc";
+//import { add as add1 } from "../src/calc2";
+import { Cartesian3 } from "@cesium/engine";
+import {
+  centreVertices,
+  computeFaceNormals,
+  computeVertexNormals,
+} from '@propelleraero/geometry-algorithms';
 
-describe("test add function", () => {
+describe("centreVertices", () => {
+
+  it("should handle no vertices", () => {
+    const result = new Cartesian3(1, 1, 0);
+
+    expect(result.x).toEqual(1);
+  });
+
   it("should return 15 for add(10,5)", () => {
     expect(add(10, 5)).toBe(15);
   });
